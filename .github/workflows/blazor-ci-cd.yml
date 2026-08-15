@@ -7,8 +7,20 @@ on:
     branches: [ "main", "dev" ]
 
 jobs:
-  test-trigger:
+  blazor-wasm-tests:
     runs-on: ubuntu-latest
+
     steps:
-    - name: Run a diagnostic test
-      run: echo "The pipeline triggered successfully"
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Restore WASM unit test project
+        run: dotnet restore src/apps/Cookbook.Web/Cookbook.Web.UnitTest/Cookbook.Web.UnitTest.csproj
+
+      - name: Run WASM unit tests
+        run: dotnet test src/apps/Cookbook.Web/Cookbook.Web.UnitTest/Cookbook.Web.UnitTest.csproj --configuration Release --no-restore
