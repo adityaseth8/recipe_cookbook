@@ -2,9 +2,9 @@ name: Blazor WASM CI/CD
 
 on:
   push:
-    branches: 
-      - "main"
-      - "dev"
+    branches: [ "main", "dev" ]
+  pull_request: # trigger CodeQL scan on PR's targetting following branches
+    branches: [ "main", "dev" ]
 
 jobs:
   test-trigger:
