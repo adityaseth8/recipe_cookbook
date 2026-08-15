@@ -1,15 +1,20 @@
 name: Blazor WASM CI/CD
 
+# On push to branch, or on manual trigger, unit test should run and if successful, the Blazor WASM app should be published to GitHub Pages.
+# on PR targetting branch, unit tests should run but the Blazor WASM app should not be published to GitHub Pages.
+
 on:
   push:
     branches: [ "main", "dev" ]
-  pull_request: # trigger CodeQL scan on PR's targetting following branches
+  pull_request:
     branches: [ "main", "dev" ]
+
+permissions:
+  contents: write
 
 jobs:
   blazor-wasm-tests:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -24,3 +29,29 @@ jobs:
 
       - name: Run WASM unit tests
         run: dotnet test src/apps/Cookbook.Web/Cookbook.Web.UnitTest/Cookbook.Web.UnitTest.csproj --configuration Release --no-restore
+
+  blazor-wasm-deploy:
+    needs: blazor-wasm-tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Publish WASM project
+        run: dotnet publish src/apps/Cookbook.Web/Cookbook.Web/Cookbook.Web.csproj --configuration Release --output ./publish
+
+      - name: Copy index.html to 404.html
+        run: cp release/wwwroot/index.html release/wwwroot/404.html
+
+      # Deploy directly to the root of the gh-pages branch
+      - name: Commit and Deploy to Production
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: release/wwwroot
