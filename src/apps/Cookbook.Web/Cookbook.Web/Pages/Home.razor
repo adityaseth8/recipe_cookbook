@@ -7,7 +7,7 @@
     <header class="page-header">
         <div>
             <p class="eyebrow">Weekly favorites</p>
-            <h1>Cookbook</h1>
+            <h1>Recipes</h1>
         </div>
         <button class="primary-button">Add recipe</button>
     </header>
@@ -23,7 +23,8 @@
             {
                 <article class="recipe-card">
                     <button class="recipe-visual" style="background: @recipe.AccentGradient;" @onclick="() => ToggleRecipe(recipe.Id)">
-                        <span class="recipe-icon">@recipe.Icon</span>
+                        <img src="@recipe.Photo" alt="@recipe.PhotoDescription" />
+                        @* <span class="recipe-icon">@recipe.Photo</span> *@
                     </button>
 
                     <div class="recipe-body">
@@ -56,7 +57,7 @@
             <button class="close-button" @onclick="CloseRecipe">✕</button>
 
             <div class="recipe-modal-hero" style="background: @selectedRecipe.AccentGradient;">
-                <span class="recipe-modal-icon">@selectedRecipe.Icon</span>
+                <img src="@selectedRecipe.Photo" alt="@selectedRecipe.PhotoDescription" />
             </div>
 
             <div class="recipe-modal-body">
@@ -129,7 +130,8 @@
         public string Time { get; set; } = "";
         public int Servings { get; set; }
         public string Difficulty { get; set; } = "";
-        public string Icon { get; set; } = "";
+        public string Photo { get; set; } = "";
+        public string PhotoDescription { get; set; } = "";
         public string AccentGradient { get; set; } = "";
         public string[] Tags { get; set; } = Array.Empty<string>();
         public string[] Ingredients { get; set; } = Array.Empty<string>();
