@@ -1,14 +1,16 @@
 name: Blazor WASM CI/CD
 
-# On push to branch, or on manual trigger, unit test should run and if successful, the Blazor WASM app should be published to GitHub Pages.
-# on PR targetting branch, unit tests should run but the Blazor WASM app should not be published to GitHub Pages.
+# On push to branch, or on manual trigger:
+#     run unit test and publish Blazor WASM app to GitHub Pages.
+# on PR targetting branch
+#     run unit tests only,
 
 on:
   push:
     branches: [ "main", "dev" ]
   pull_request:
     branches: [ "main", "dev" ]
-  workflow_dispatch:            # manual pipeline trigger option
+  workflow_dispatch:    # manual pipeline trigger option
 
 permissions:
   contents: write
@@ -33,7 +35,7 @@ jobs:
 
   blazor-wasm-deploy:
     needs: blazor-wasm-tests
-    # if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
 
     steps:
