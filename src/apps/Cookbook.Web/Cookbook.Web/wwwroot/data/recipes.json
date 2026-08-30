@@ -1,0 +1,85 @@
+﻿[
+  {
+    "id": 1,
+    "title": "Avocado Egg Toast",
+    "description": "Creamy avocado spread on toasted bread with perfectly cooked eggs and sautéed veggies",
+    "time": "15 min",
+    "servings": 2,
+    "difficulty": "Medium",
+    "tags": [ "Breakfast", "High Fiber" ],
+    "photo": "images/recipes/avocado_egg_toast.png",
+    "photoDescription": "avocado_egg_toast",
+    "icon": "🍳",
+    "accentGradient": "linear-gradient(135deg, #fbbf24, #f97316)",
+    "ingredients": [
+      "2 slices bread",
+      "1 avocado",
+      "2 eggs",
+      "1/2 bell pepper, sliced",
+      "1/2 medium onion, sliced",
+      "handful of spinach",
+      "red chili flakes, salt, black pepper",
+      "cheese (optional)"
+    ],
+    "instructions": [
+      "Heat a little olive oil in a pan over medium heat. Add the onion and bell pepper and sauté until softened; season with salt, pepper, and chili flakes.",
+      "Crack the eggs over the veggies, add more seasoning, top with spinach, and cover. Steam until the eggs reach your preferred doneness.",
+      "Toast the bread. Mash the avocado with salt, pepper, and chili flakes, then spread onto the toast.",
+      "Place the cooked eggs and veggies on top. Add cheese if you like."
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Sooji Besan Cheela",
+    "description": "A quick savory pancake made with semolina and chickpea flour",
+    "time": "30 min",
+    "servings": 2,
+    "difficulty": "Easy",
+    "tags": ["Vegetarian", "Breakfast", "High Protein"],
+    "photo": "images/recipes/sooji_besan_cheela.png",
+    "photoDescription":  "sooji_besan_cheela",
+    "accentGradient": "linear-gradient(135deg, #34d399, #10b981)",
+    "ingredients": [
+      "1 cup semolina (sooji)",
+      "1 cup besan (chickpea flour)",
+      "1/2 cup yogurt",
+      "__ cups water",
+      "1/4 cup onion, finely chopped",
+      "coriander leaves, chopped",
+      "green chili, finely chopped",
+      "salt, turmeric, red chili powder, black pepper"
+    ],
+    "instructions": [
+      "Mix sooji, besan, and yogurt in a 1:1:0.5 ratio, adding water gradually to make a loose batter (sooji will thicken as it absorbs water).",
+      "Add chopped onion, coriander, green chili, and spices.",
+      "Rest the batter for 20 minutes.",
+      "Spread each scoop of batter on hot greased pan like a dosa, cook until golden brown on both sides."
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Honey Lemon Chicken",
+    "description": "Chicken drumsticks with honey lemon glaze",
+    "time": "30 min",
+    "servings": 2,
+    "difficulty": "Easy",
+    "tags": [ "Entree", "High Protein" ],
+    "photo": "images/recipes/honey_lemon_chicken.png",
+    "photoDescription": "honey_lemon_chicken",
+    "accentGradient": "linear-gradient(135deg, #f9a8d4, #fb7185)",
+    "ingredients": [
+      "4 chicken drumsticks",
+      "2 tbsp honey",
+      "1/4 cup lemon juice",
+      "2 cloves garlic, minced",
+      "Soy sauce",
+      "Salt, black pepper"
+    ],
+    "instructions": [
+      "Marinate chicken drumstick with salt and pepper for like 10 mins. Also cut deep slits in each drumstick",
+      "After heating oil in a pan, cook drumsticks on all sides for 8 mins. Should get some browning",
+      "Combine honey, lemon juice, garlic, salt, & a splash of soy sauce. Pour into pan. Add bit of water as well",
+      "Cover pan and cook for 10 mins. Finish with some cilantro optionally. Serve with rice."
+    ]
+  }
+]
