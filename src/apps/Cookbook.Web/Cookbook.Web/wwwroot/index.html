@@ -5,7 +5,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cookbook.Web</title>
-    <base href="/recipe_cookbook/" />
+    <script>
+        const isLocalhost = ["localhost", "127.0.0.1", "[::1]"].includes(window.location.hostname);
+        document.write('<base href="' + (isLocalhost ? "/" : "/recipe_cookbook/") + '" />');
+    </script>
     <link rel="preload" id="webassembly" />
     <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/app.css" />
