@@ -123,6 +123,54 @@
     font-weight: 600;
 }
 
+.serving-control {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 1.5rem 0 1rem;
+    padding: 0.8rem 1rem;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+}
+
+.serving-label {
+    font-weight: 600;
+    color: #111827;
+}
+
+.serving-stepper {
+    display: inline-flex;
+    align-items: center;
+    background: white;
+    border: 1px solid #d1d5db;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.serving-step {
+    width: 2.5rem;
+    height: 2.5rem;
+    border: none;
+    background: transparent;
+    color: #111827;
+    font-size: 1.5rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.serving-step:hover {
+    background: #f3f4f6;
+}
+
+.serving-value {
+    min-width: 2.5rem;
+    text-align: center;
+    font-weight: 700;
+    color: #111827;
+}
+
 .recipe-modal-backdrop {
     position: fixed;
     inset: 0;

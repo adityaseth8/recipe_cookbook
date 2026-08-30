@@ -9,7 +9,6 @@
             <p class="eyebrow">Weekly favorites</p>
             <h1>Recipes</h1>
         </div>
-        <!-- <button class="primary-button">Add recipe</button> -->
     </header>
 
     @if (recipes is null)
@@ -24,7 +23,6 @@
                 <article class="recipe-card">
                     <button class="recipe-visual" style="background: @recipe.AccentGradient;" @onclick="() => ToggleRecipe(recipe.Id)">
                         <img src="@recipe.Photo" alt="@recipe.PhotoDescription" />
-                        @* <span class="recipe-icon">@recipe.Photo</span> *@
                     </button>
 
                     <div class="recipe-body">
@@ -63,7 +61,7 @@
             <div class="recipe-modal-body">
                 <div class="recipe-meta">
                     <span>@selectedRecipe.Time</span>
-                    <span>@selectedRecipe.Servings servings</span>
+                    <span>@GetSelectedServings(selectedRecipe) servings</span>
                     <span>@selectedRecipe.Difficulty</span>
                 </div>
 
@@ -77,13 +75,22 @@
                     }
                 </div>
 
+                <div class="serving-control">
+                    <span class="serving-label">Servings</span>
+                    <div class="serving-stepper">
+                        <button class="serving-step" type="button" @onclick="() => UpdateServings(selectedRecipe, GetSelectedServings(selectedRecipe) - 1)">−</button>
+                        <span class="serving-value">@GetSelectedServings(selectedRecipe)</span>
+                        <button class="serving-step" type="button" @onclick="() => UpdateServings(selectedRecipe, GetSelectedServings(selectedRecipe) + 1)">+</button>
+                    </div>
+                </div>
+
                 <div class="recipe-detail-grid">
                     <div>
                         <h3>Ingredients</h3>
                         <ul>
                             @foreach (var ingredient in selectedRecipe.Ingredients)
                             {
-                                <li>@ingredient</li>
+                                <li>@FormatIngredient(ingredient, GetSelectedServings(selectedRecipe), selectedRecipe.BaseServings > 0 ? selectedRecipe.BaseServings : selectedRecipe.Servings)</li>
                             }
                         </ul>
                     </div>
@@ -106,10 +113,52 @@
 @code {
     private List<Recipe>? recipes;
     private Recipe? selectedRecipe;
+    private readonly Dictionary<int, int> selectedServingsByRecipe = new();
 
     protected override async Task OnInitializedAsync()
     {
         recipes = await Http.GetFromJsonAsync<List<Recipe>>("data/recipes.json");
+    }
+
+    private int GetSelectedServings(Recipe recipe)
+    {
+        if (selectedServingsByRecipe.TryGetValue(recipe.Id, out var servings))
+        {
+            return servings;
+        }
+
+        var defaultServings = recipe.BaseServings > 0 ? recipe.BaseServings : recipe.Servings;
+        selectedServingsByRecipe[recipe.Id] = defaultServings;
+        return defaultServings;
+    }
+
+    private void UpdateServings(Recipe recipe, int servings)
+    {
+        var minimumServings = recipe.BaseServings > 0 ? recipe.BaseServings : 1;
+        selectedServingsByRecipe[recipe.Id] = Math.Max(minimumServings, servings);
+        selectedRecipe = recipe;
+    }
+
+    private static string FormatIngredient(Ingredient ingredient, int selectedServings, int baseServings)
+    {
+        if (baseServings <= 0)
+        {
+            baseServings = selectedServings;
+        }
+
+        if (ingredient.Quantity <= 0)
+        {
+            return ingredient.Name;
+        }
+
+        var scaler = selectedServings / (double)baseServings;
+        var scaledAmount = ingredient.Quantity * scaler;
+        var quantityText = scaledAmount % 1 == 0
+            ? Math.Round(scaledAmount).ToString("0")
+            : scaledAmount.ToString("0.##");
+
+        var unitText = string.IsNullOrWhiteSpace(ingredient.Unit) ? string.Empty : $" {ingredient.Unit}";
+        return $"{quantityText}{unitText} {ingredient.Name}".Trim();
     }
 
     private void ToggleRecipe(int recipeId)
@@ -129,12 +178,20 @@
         public string Description { get; set; } = "";
         public string Time { get; set; } = "";
         public int Servings { get; set; }
+        public int BaseServings { get; set; }
         public string Difficulty { get; set; } = "";
         public string Photo { get; set; } = "";
         public string PhotoDescription { get; set; } = "";
         public string AccentGradient { get; set; } = "";
         public string[] Tags { get; set; } = Array.Empty<string>();
-        public string[] Ingredients { get; set; } = Array.Empty<string>();
+        public Ingredient[] Ingredients { get; set; } = Array.Empty<Ingredient>();
         public string[] Instructions { get; set; } = Array.Empty<string>();
+    }
+
+    private class Ingredient
+    {
+        public double Quantity { get; set; }
+        public string Unit { get; set; } = "";
+        public string Name { get; set; } = "";
     }
 }
