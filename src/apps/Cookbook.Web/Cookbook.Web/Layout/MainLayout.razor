@@ -1,14 +1,15 @@
 ﻿@inherits LayoutComponentBase
 <div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
+    <header class="top-row px-4">
+        <nav class="nav-links">
+            <a href="/">Home</a>
+            <a href="/nutrition-calculator">Nutrition Calculator</a>
+            <a href="/user-metrics">User Metrics</a>
+            <a href="/about">About</a>
+        </nav>
+    </header>
 
     <main>
-        <div class="top-row px-4">
-            <a href="/about" target="_self">About</a>
-        </div>
-
         <article class="content px-4">
             @Body
         </article>
