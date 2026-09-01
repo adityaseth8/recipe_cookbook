@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Cookbook.Web.UnitTest/Cookbook.Web.UnitTest.csproj" />
+  <Project Path="Cookbook.Web/Cookbook.Web.csproj" />
+</Solution>

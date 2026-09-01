@@ -1,0 +1,140 @@
+﻿@page "/"
+@inject HttpClient Http
+
+<PageTitle>Aditya's Recipes</PageTitle>
+
+<div class="recipe-page">
+    <header class="page-header">
+        <div>
+            <p class="eyebrow">Weekly favorites</p>
+            <h1>Recipes</h1>
+        </div>
+        <!-- <button class="primary-button">Add recipe</button> -->
+    </header>
+
+    @if (recipes is null)
+    {
+        <p>Loading recipes...</p>
+    }
+    else
+    {
+        <div class="recipe-grid">
+            @foreach (var recipe in recipes)
+            {
+                <article class="recipe-card">
+                    <button class="recipe-visual" style="background: @recipe.AccentGradient;" @onclick="() => ToggleRecipe(recipe.Id)">
+                        <img src="@recipe.Photo" alt="@recipe.PhotoDescription" />
+                        @* <span class="recipe-icon">@recipe.Photo</span> *@
+                    </button>
+
+                    <div class="recipe-body">
+                        <div class="recipe-meta">
+                            <span>@recipe.Time</span>
+                            <span>@recipe.Servings servings</span>
+                            <span>@recipe.Difficulty</span>
+                        </div>
+
+                        <h2>@recipe.Title</h2>
+                        <p>@recipe.Description</p>
+
+                        <div class="recipe-tags">
+                            @foreach (var tag in recipe.Tags)
+                            {
+                                <span class="tag">@tag</span>
+                            }
+                        </div>
+                    </div>
+                </article>
+            }
+        </div>
+    }
+</div>
+
+@if (selectedRecipe is not null)
+{
+    <div class="recipe-modal-backdrop" @onclick="CloseRecipe">
+        <div class="recipe-modal" @onclick:stopPropagation="true">
+            <button class="close-button" @onclick="CloseRecipe">✕</button>
+
+            <div class="recipe-modal-hero" style="background: @selectedRecipe.AccentGradient;">
+                <img src="@selectedRecipe.Photo" alt="@selectedRecipe.PhotoDescription" />
+            </div>
+
+            <div class="recipe-modal-body">
+                <div class="recipe-meta">
+                    <span>@selectedRecipe.Time</span>
+                    <span>@selectedRecipe.Servings servings</span>
+                    <span>@selectedRecipe.Difficulty</span>
+                </div>
+
+                <h2>@selectedRecipe.Title</h2>
+                <p class="recipe-modal-description">@selectedRecipe.Description</p>
+
+                <div class="recipe-tags">
+                    @foreach (var tag in selectedRecipe.Tags)
+                    {
+                        <span class="tag">@tag</span>
+                    }
+                </div>
+
+                <div class="recipe-detail-grid">
+                    <div>
+                        <h3>Ingredients</h3>
+                        <ul>
+                            @foreach (var ingredient in selectedRecipe.Ingredients)
+                            {
+                                <li>@ingredient</li>
+                            }
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3>Instructions</h3>
+                        <ol>
+                            @foreach (var step in selectedRecipe.Instructions)
+                            {
+                                <li>@step</li>
+                            }
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+    private List<Recipe>? recipes;
+    private Recipe? selectedRecipe;
+
+    protected override async Task OnInitializedAsync()
+    {
+        recipes = await Http.GetFromJsonAsync<List<Recipe>>("data/recipes.json");
+    }
+
+    private void ToggleRecipe(int recipeId)
+    {
+        selectedRecipe = recipes?.FirstOrDefault(r => r.Id == recipeId);
+    }
+
+    private void CloseRecipe()
+    {
+        selectedRecipe = null;
+    }
+
+    private class Recipe
+    {
+        public int Id { get; set; }
+        public string Title { get; set; } = "";
+        public string Description { get; set; } = "";
+        public string Time { get; set; } = "";
+        public int Servings { get; set; }
+        public string Difficulty { get; set; } = "";
+        public string Photo { get; set; } = "";
+        public string PhotoDescription { get; set; } = "";
+        public string AccentGradient { get; set; } = "";
+        public string[] Tags { get; set; } = Array.Empty<string>();
+        public string[] Ingredients { get; set; } = Array.Empty<string>();
+        public string[] Instructions { get; set; } = Array.Empty<string>();
+    }
+}
