@@ -2,17 +2,45 @@
 
 <PageTitle>About </PageTitle>
 
-<h1>About</h1>
-<!-- 
-<p role="status">Current count: @currentCount</p>
+<div class="about-page">
+    <header class="page-header">
+        <div>
+            <h1>About This Site</h1>
+        </div>
+    </header>
 
-<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+    <section class="about-content">
+        <h2>Why This Exists</h2>
+        <p>
+            I created this website to document recipes and meals that I like making.
+            Rather than following recipes exactly, I often create variations based on what's available and what I'm craving.
+            This catalog helps me remember what I've made so I can recreate favorites in the future.
 
-@code {
-    private int currentCount = 0;
+            I also wanted to go back to coding with less AI, since I use AI at work extensively.
+            So I figured I'd combine the two. Once I have enough recipes with aesthetic photos, 
+            I'll probably print out a cookbook for myself and my family.
+        </p>
+    </section>
 
-    private void IncrementCount()
-    {
-        currentCount++;
-    }
-} -->
+    <section class="system-design">
+        <h2>System Design</h2>
+        <p>
+            Coming soon...
+        </p>
+        <!-- <p>
+            This is a lightweight, free-to-deploy Blazor WebAssembly application built for simplicity and scalability.
+            All data is stored as static JSON, and images are served from the wwwroot folder—no backend database required.
+        </p> -->
+    </section>
+</div>
+
+<style>
+.about-page {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.about-content, .system-design {
+    margin: 2rem 0;
+}
+</style>
