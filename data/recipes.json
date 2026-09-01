@@ -81,5 +81,341 @@
       "Combine honey, lemon juice, garlic, salt, & a splash of soy sauce. Pour into pan. Add bit of water as well",
       "Cover pan and cook for 10 mins. Finish with some cilantro optionally. Serve with rice."
     ]
+  },
+  {
+    "id": 4,
+    "title": "Chicken Lo Mein",
+    "description": "A delicious stir-fried noodle dish with chicken and vegetables.",
+    "time": "30 min",
+    "servings": 2,
+    "difficulty": "Medium",
+    "tags": ["Entree", "chicken"],
+    "photo": "images/recipes/chicken_lo_mein.png",
+    "photoDescription": "Chicken Lo Mein",
+    "accentGradient": "linear-gradient(135deg, #f9a8d4, #fb7185)",
+    "ingredients": [
+      "2 Carrots, sliced",
+      "1 cup Broccoli florets",
+      "2 chicken thighs, sliced",
+      "1 onion, sliced",
+      "2 cloves garlic, minced",
+      "Soy sauce",
+      "Eggs Noodles of choice",
+      "Salt, black pepper, red chili flakes, tumeric, red chili powder"
+    ],
+    "instructions": [
+      "Cook noodles according to package instructions. Drain and set aside.",
+      "Heat oil in a pan. Add chicken and cook until no longer pink. Remove from pan.",
+      "In the same pan, add garlic, onion, carrots, and broccoli. Stir-fry for a few minutes until vegetables are tender-crisp.",
+      "Return chicken to the pan. Add cooked noodles and soy sauce. Toss everything together until well combined.",
+      "Season with salt, black pepper, red chili flakes, turmeric, and red chili powder to taste."
+    ]
+  },
+  {
+  "id": 5,
+  "title": "Chicken Alfredo Pasta",
+  "description": "Creamy pasta tossed with chicken, garlic, parmesan, and fresh basil.",
+  "time": "20 minutes",
+  "servings": 2,
+  "difficulty": "Easy",
+  "tags": ["Entree", "savory", "chicken"],
+  "photo": "images/recipes/chicken_alfredo.png",
+  "photoDescription": "Creamy chicken Alfredo pasta garnished with basil and parmesan.",
+  "ingredients": [
+    "2 cups cooked pasta",
+    "1 cup heavy whipping cream",
+    "2 tbsp butter",
+    "1/2 cup grated parmesan cheese",
+    "1/4 cup finely chopped onion",
+    "2 cloves garlic, minced",
+    "1/4 cup chicken, diced",
+    "2 tbsp tomato, finely chopped (optional)",
+    "Basil, chopped",
+    "Black pepper, salt, red chili flakes"
+  ],
+  "instructions": [
+    "Heat butter and olive oil in a pan over medium heat. Add diced chicken and cook until chicken in no longer pink.",
+    "Add chopped onion and garlic and sauté for a couple minutes until onions are translucent.",
+    "Add the chopped tomato and cook briefly to bring out color.",
+    "Pour in the heavy whipping cream and stir gently until bubbly.",
+    "Lower the heat and mix in parmesan cheese",
+    "Season with salt, black pepper, and red chili flakes.",    
+    "Add the cooked pasta and toss until fully coated.",
+    "Garnish with fresh basil and extra parmesan before serving."
+  ]
+  },
+  {
+    "id": 6,
+    "title": "Aloo Paratha",
+    "description": "Stuffed flatbread filled with spiced potatoes and onions",
+    "time": "45 minutes",
+    "servings": 2,
+    "difficulty": "Medium",
+    "tags": ["Breakfast", "Vegetarian", "Indian"],
+    "photo": "images/recipes/aloo_paratha.png",
+    "photoDescription": "Aloo Paratha with date pickle",
+    "accentGradient": "linear-gradient(135deg, #f9a8d4, #fb7185)",
+    "ingredients": [
+      "2 cups chakki atta",
+      "Water as needed (for dough)",
+      "2 medium potatoes, boiled and mashed",
+      "1 small onion, finely chopped",
+      "1–2 green chilies, finely chopped",
+      "1 tbsp fresh coriander, chopped",
+      "1/2 tsp red chili powder",
+      "1/2 tsp garam masala",
+      "1/2 tsp cumin powder",
+      "1/4 tsp turmeric",
+      "Salt to taste",
+      "Ghee or oil for cooking"
+    ],
+    "instructions": [
+      "In a mixing bowl, kneed together the chakki atta with warm water to form a soft, pliable, and smooth dough. Add water slowly.  Cover and let it rest for 20 minutes.",
+      "In another bowl, combine the mashed potatoes, chopped onion, green chilies, coriander, red chili powder, garam masala, cumin powder, turmeric, and salt. Mix well to create the filling.",
+      "Divide the dough into equal balls. Roll each ball slightly, place a spoonful of potato stuffing in the center, and fold the edges inward to seal.",
+      "Gently roll the stuffed dough ball into a flat paratha, dusting with flour as needed. Be carefuly not to having stuffing burst out",
+      "Heat a pan or tawa on medium heat. Place the paratha and cook until golden spots appear.",
+      "Flip and apply ghee or oil. Cook both sides until crisp and golden.",
+      "Serve hot with yogurt, pickle, or butter."
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Bhindi Masala",
+    "description": "Spicy okra curry with onions and Indian spices",
+    "time": "25 mins",
+    "servings": 2,
+    "difficulty": "Easy",
+    "tags": ["Entree", "Vegetarian", "Indian"],
+    "photo": "images/recipes/bhindi.png",
+    "photoDescription": "",
+    "accentGradient": "linear-gradient(135deg, #f9a8d4, #fb7185)",
+    "ingredients": [
+      "Okra, 1 lb",
+      "Onion, 1 medium, chopped",
+      "Green chilies, 3, chopped",
+      "Ginger, 2 inch piece, grated",
+      "Turmeric powder, 1/2 tsp",
+      "Coriander powder, 1 tsp",
+      "Salt, to taste"
+    ],
+    "instructions": [
+      "Wash okra and pat dry. Cut off the tops and slice into pieces.",
+      "Heat oil in a pan. Add okra into pan. Stir minimally to avoid sliminess.",
+      "After bhindi is cooked 60-70%, add chopped onion, ginger, green chilies, turmeric, and coriander powder.",
+      "Cook until onions are translucent. Then add salt. Cook for another few minutes."
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Roti",
+    "description": "Whole wheat flatbread",
+    "time": "40 mins",
+    "servings": 4,
+    "difficulty": "Easy",
+    "tags": ["Vegetarian", "Indian"],
+    "photo": "images/recipes/roti.png",
+    "photoDescription": "roti",
+    "accentGradient": "linear-gradient(135deg, #f9a8d4, #fb7185)",
+    "ingredients": [
+      "2 cups whole wheat flour",
+      "Warm water as needed",
+      "Butter, 1 tbsp (optional)"
+    ],
+    "instructions": [
+      "In a mixing bowl, combine whole wheat flour with warm water and butter gradually to form a soft dough. Knead for 8-10 minutes until smooth and not sticky.",
+      "Cover the dough and let it rest for 20 minutes.",
+      "Divide the dough into equal portions and roll each portion into a ball.",
+      "On a floured surface, roll out each ball into a thin circle.",
+      "Heat a skillet or tawa over medium-high heat. Place the rolled-out dough on the skillet.",
+      "Cook until bubbles form, then flip and cook the other side until golden brown spots appear.",
+      "Optionally, apply butter on top of the cooked roti before serving."
+    ]
+  },
+  {
+    "id": 9,
+    "title": "Masala Baingan",
+    "description": "A flavorful eggplant curry with Indian spices",
+    "time": "30 mins",
+    "servings": 2,
+    "difficulty": "Medium",
+    "tags": ["Entree", "Vegetarian", "Indian"],
+    "photo": "images/recipes/masala_baingan.png",
+    "photoDescription": "Masala Baingan",
+    "accentGradient": "linear-gradient(135deg, #f9a8d4, #fb7185)",
+    "ingredients": [],
+    "instructions": []
+  },
+  {
+    "id": 10,
+    "title": "Curd Rice",
+    "description": "A refreshing and healthy rice dish with curd and spices",
+    "time": "10 mins",
+    "servings": 2,
+    "difficulty": "Easy",
+    "tags": ["Vegetarian", "Indian"],
+    "photo": "images/recipes/curd_rice.png",
+    "photoDescription": "Curd Rice",
+    "accentGradient": "linear-gradient(135deg, #f9a8d4, #fb7185)",
+    "ingredients": [
+      "1 cup cooked rice",
+      "1 cup plain yogurt (curd)",
+      "1/8 cup water (optional, for creaminess)",
+      "Salt to taste"
+    ],
+    "instructions": [
+      "Heat the rice in the microwave or on the stove until warm.",
+      "In a bowl, mix the warm rice with yogurt. Add water if you prefer a creamier consistency.",
+      "Season with salt to taste. Serve with avakaya pickle or any savory side dish."
+    ]
+  },
+  {
+    "id": 11,
+    "title": "Lauki Kofta",
+    "description": "A traditional Indian curry made with bottle gourd fried dumplings in a spiced tomato gravy",
+    "time": "60 mins",
+    "servings": 4,
+    "difficulty": "Hard",
+    "tags": ["Entree", "Vegetarian", "Indian"],
+    "photo": "images/recipes/lauki_kofta.png",
+    "photoDescription": "Lauki Kofta",
+    "accentGradient": "linear-gradient(135deg, #f9a8d4, #fb7185)",
+    "ingredients": [
+      "1 Bottle Gourd (Lauki), peeled and grated",
+      "1/2 cup gram flour (besan)",
+      "2 onions, chopped",
+      "2 tomatoes, chopped",
+      "Handful of cashews",
+      "2 green chilies, chopped",
+      "4 cloves garlic, finely chopped",
+      "Salt, turmeric, red chili powder, coriander powder, cumin powder, garam masala",
+      "Fresh coriander leaves, chopped",
+      "Kasuri methi (dried fenugreek leaves)",
+      "Heavy whipping cream (optional)"
+    ],
+    "instructions": [
+      "Heat oil in a pan. Add onion, garlic, and green chili. Saute for 2-3 minutes.",
+      "Add tomatoes, cashews, and spices (turmeric, red chili powder, coriander powder, cumin powder). Cook for a minute.",
+      "Add water, cover & cook. Then blend the mixture into a smooth gravy.",
+      "In a separate bowl, take grated lauki (squeeze out water), onion, green chili, turmeric, red chili powder, coriander powder, garam masala, salt, coriander leaves, and besan. Mix well.",
+      "Form little balls, and then deep fry them until golden brown. Drain on paper towels.",
+      "In separate pan, heat some oil, then add the prepared gravy. Cook for 4-5 minutes. Add lauki water to adjust consistency. to adjust consistency.",
+      "Add back the fried kofta. On top add kasuri methi, coriander leaves, fresh cream. Serve"
+    ]
+  },
+  {
+    "id": 12,
+    "title": "Tomato Bisque Soup",
+    "description": "A creamy tomato soup perfect for a quick and easy meal",
+    "time": "20 mins",
+    "servings": 4,
+    "difficulty": "Easy",
+    "tags": ["Soup", "Vegetarian", "Quick"],
+    "photo": "images/recipes/tomato_bisque.png",
+    "photoDescription": "Tomato Bisque Soup",
+    "accentGradient": "",
+    "ingredients": [
+      "5 tomatoes, sliced in half",
+      "1 medium onion, sliced in half",
+      "4 cloves garlic",
+      "1/2 cup grated parmesan cheese",
+      "1 cup heavy whipping cream",
+      "Salt, black pepper, red chili flakes, basil"
+    ],
+    "instructions": [
+      "Preheat oven to 400°F (200°C). Place tomatoes, onion, and garlic on a baking sheet. Drizzle with olive oil and season with salt and pepper.",
+      "Roast in the oven for 20 minutes until vegetables are tender and slightly caramelized.",
+      "Transfer roasted vegetables to a blender. Add a splash of water or vegetable broth and blend until smooth.",
+      "Pour the blended mixture into a pot. Stir in heavy cream and grated parmesan cheese. Heat over medium heat until warmed through.",
+      "Season with additional salt, black pepper, red chili flakes, and fresh basil to taste.",
+      "Serve hot with crusty bread or croutons."
+    ]
+  },
+  {
+    "id": 13,
+    "title": "Tomato Egg Stir Fry",
+    "description": "A quick and delicious stir fry made with tomatoes and eggs",
+    "time": "15 mins",
+    "servings": 4,
+    "difficulty": "Easy",
+    "tags": ["Entree", "Quick"],
+    "photo": "images/recipes/coming_soon.png",
+    "photoDescription": "Tomato Egg Stir Fry",
+    "accentGradient": "",
+    "ingredients": [
+      "4 eggs",
+      "3-4 tomatoes, cut into chunks",
+      "2 scallions, sliced",
+      "2 tbsp water",
+      "1 tsp soy sauce",
+      "2 tsp sugar",
+      "2 tbsp ketchup",
+      "1/4 tsp black pepper",
+      "1 tsp sesame oil",
+      "Salt, to taste"
+    ],
+    "instructions": [
+      "Heat oil in a pan. Pour eggs and scramble until just set. Remove and set aside.",
+      "In the same pan, add scallions and tomatoes. Stir-fry scallions for a minute.",
+      "Once fragrant, add the tomatoes and a splash of water",
+      "Let that simmer for a few minutes. When the tomatoes become soft and release their juices, add soy sauce, sugar, ketchup, and black pepper. Stir to combine.",
+      "Once thickened, incorporate the scrambled eggs. Finish with some sesame oil."
+    ]
+  },
+  {
+    "id": 14,
+    "title": "Chicken Soup",
+    "description": "A comforting and hearty soup made with tender chicken and vegetables",
+    "time": "120 mins",
+    "servings": 6,
+    "difficulty": "Medium",
+    "tags": ["Entree", "Chicken"],
+    "photo": "images/recipes/chicken_soup.png",
+    "photoDescription": "Chicken Soup",
+    "accentGradient": "",
+    "ingredients": [],
+    "instructions": []
+  },
+  {
+    "id": 15,
+    "title": "Pasta Salad",
+    "description": "A refreshing and colorful pasta salad with vegetables and a tangy dressing",
+    "time": "30 mins",
+    "servings": 4,
+    "difficulty": "Easy",
+    "tags": ["Salad", "Vegetarian"],
+    "photo": "images/recipes/pasta_salad.png",
+    "photoDescription": "Pasta Salad",
+    "accentGradient": "",
+    "ingredients": [],
+    "instructions": []
+  },
+  {
+    "id": 16,
+    "title": "Samosa Chaat",
+    "description": "Crispy samosas, served with masala chickpeas, yogurt, and chutneys",
+    "time": "30 mins",
+    "servings": 4,
+    "difficulty": "Medium",
+    "tags": ["Snack", "Indian"],
+    "photo": "images/recipes/samosa_chaat.png",
+    "photoDescription": "Samosa Chaat",
+    "accentGradient": "",
+    "ingredients": [],
+    "instructions": []
+  },
+  {
+    "id": 17,
+    "title": "Loaded Nachos",
+    "description": "Crispy tortilla chips with Mexican beans, guacamole, sour cream, and salsa",
+    "time": "60 mins",
+    "servings": 4,
+    "difficulty": "Hard",
+    "tags": ["Entree", "Mexican"],
+    "photo": "images/recipes/loaded_nachos.png",
+    "photoDescription": "Loaded Nachos",
+    "accentGradient": "",
+    "ingredients": [],
+    "instructions": []
   }
 ]
