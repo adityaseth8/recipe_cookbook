@@ -7,9 +7,19 @@
     <title>Cookbook.Web</title>
     <script>
         const isLocalhost = ["localhost", "127.0.0.1", "[::1]"].includes(window.location.hostname);
-        document.write('<base href="' + (isLocalhost ? "/" : "/recipe_cookbook/") + '" />');
+        let baseHref = "/";
+        
+        if (!isLocalhost) {
+            // For GitHub Pages deployments, check if we're in a subdirectory
+            const pathname = window.location.pathname;
+            if (pathname.includes("/recipe_cookbook/") || pathname === "/recipe_cookbook") {
+                baseHref = "/recipe_cookbook/";
+            }
+        }
+        
+        document.write('<base href="' + baseHref + '" />');
     </script>
-    <link href="_framework/dotnet.jnt9t3ojyl.js" rel="preload" as="script" fetchpriority="high" crossorigin="anonymous" integrity="sha256-oZgz5Q8ztybdtawfpmSHFkMxijTToZIOiZ+LqNcLjFs=" />
+    <link href="_framework/dotnet.h2270wano5.js" rel="preload" as="script" fetchpriority="high" crossorigin="anonymous" integrity="sha256-OebTKRXzHzcHC3EPbQm6EH6hpE2TJ2UhuUyz8ODjbzY=" />
     <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/app.css" />
     <link rel="icon" type="image/png" href="favicon.png" />
@@ -17,7 +27,7 @@
     <script type="importmap">{
   "imports": {
     "./_framework/blazor.webassembly.js": "./_framework/blazor.webassembly.w3qd1tpl0e.js",
-    "./_framework/dotnet.js": "./_framework/dotnet.jnt9t3ojyl.js",
+    "./_framework/dotnet.js": "./_framework/dotnet.h2270wano5.js",
     "./_framework/dotnet.native.js": "./_framework/dotnet.native.vzj2a6aakt.js",
     "./_framework/dotnet.runtime.js": "./_framework/dotnet.runtime.zbexyp8zrs.js"
   },
@@ -25,8 +35,8 @@
   "integrity": {
     "./_framework/blazor.webassembly.js": "sha256-lDXsDYFgm62F+YUvxES7IOTCXYpiHpU3uR45YdC6mq4=",
     "./_framework/blazor.webassembly.w3qd1tpl0e.js": "sha256-lDXsDYFgm62F+YUvxES7IOTCXYpiHpU3uR45YdC6mq4=",
-    "./_framework/dotnet.jnt9t3ojyl.js": "sha256-oZgz5Q8ztybdtawfpmSHFkMxijTToZIOiZ+LqNcLjFs=",
-    "./_framework/dotnet.js": "sha256-oZgz5Q8ztybdtawfpmSHFkMxijTToZIOiZ+LqNcLjFs=",
+    "./_framework/dotnet.h2270wano5.js": "sha256-OebTKRXzHzcHC3EPbQm6EH6hpE2TJ2UhuUyz8ODjbzY=",
+    "./_framework/dotnet.js": "sha256-OebTKRXzHzcHC3EPbQm6EH6hpE2TJ2UhuUyz8ODjbzY=",
     "./_framework/dotnet.native.js": "sha256-RezASHv+dbqV50cFnld76YiLhk4B+BjMAKs/euUdNyE=",
     "./_framework/dotnet.native.vzj2a6aakt.js": "sha256-RezASHv+dbqV50cFnld76YiLhk4B+BjMAKs/euUdNyE=",
     "./_framework/dotnet.runtime.js": "sha256-MZMguyke9CroSQl+L/SHIGFkPTD+LtYGXkXjAvwWx40=",
